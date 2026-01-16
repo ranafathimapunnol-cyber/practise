@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kerala Weather Checker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+  rel="icon"
+  href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌧️</text></svg>">
+
+</head>
+
+<body class="bg-sky-100 min-h-screen flex items-center justify-center">
+<div class="bg-white p-6 rounded-xl shadow-lg w-96 text-center ">
+<h1 class="text-2xl font-bold mb-4">🌦️ Weather by District</h1>
+
+ <select 
+id="district"
+class="w-full p-2 border rounded mb-4 focus:outline-none focus:ring-2 focus:ring-sky-400" >
+      <option value="">Select District</option>
+      <option value="thiruvananthapuram">Thiruvananthapuram</option>
+      <option value="kollam">Kollam</option>
+      <option value="pathanamthitta">Pathanamthitta</option>
+      <option value="alappuzha">Alappuzha</option>
+      <option value="kottayam">Kottayam</option>
+      <option value="idukki">Idukki</option>
+      <option value="ernakulam">Ernakulam</option>
+      <option value="thrissur">Thrissur</option>
+      <option value="palakkad">Palakkad</option>
+      <option value="malappuram">Malappuram</option>
+      <option value="kozhikode">Kozhikode</option>
+      <option value="wayanad">Wayanad</option>
+      <option value="kannur">Kannur</option>
+      <option value="kasaragod">Kasaragod</option>
+ </select>
+
+<button 
+onclick="checkWeather()"
+class="w-full bg-sky-500 text-white py-2 rounded hover:bg-sky-600 transition">
+ Check Weather
+ </button>
+
+<p id="result" class="mt-4 font-semibold"></p>
+
+</div>
+
+  <script>
+ function checkWeather() {
+let district = document.getElementById("district").value;
+ let result = document.getElementById("result");
+
+ if (district === "") {
+result.innerText = "Please select a district ❗";
+      }
+      else if (district === "thiruvananthapuram") {
+        result.innerText = "Thiruvananthapuram: Pleasant 🌤️";
+      }
+      else if (district === "kollam") {
+        result.innerText = "Kollam: Humid ☀️";
+      }
+      else if (district === "pathanamthitta") {
+        result.innerText = "Pathanamthitta: Rainy 🌧️";
+      }
+      else if (district === "alappuzha") {
+        result.innerText = "Alappuzha: Warm & Humid ☀️";
+      }
+      else if (district === "kottayam") {
+        result.innerText = "Kottayam: Cloudy ☁️";
+      }
+      else if (district === "idukki") {
+        result.innerText = "Idukki: Cold ❄️";
+      }
+      else if (district === "ernakulam") {
+        result.innerText = "Ernakulam: Hot & Humid ☀️";
+      }
+      else if (district === "thrissur") {
+        result.innerText = "Thrissur: Sunny 🌞";
+      }
+      else if (district === "palakkad") {
+        result.innerText = "Palakkad: Very Hot 🔥";
+      }
+      else if (district === "malappuram") {
+        result.innerText = "Malappuram: Warm 🌤️";
+      }
+      else if (district === "kozhikode") {
+        result.innerText = "Kozhikode: Rainy 🌧️";
+      }
+      else if (district === "wayanad") {
+        result.innerText = "Wayanad: Cool & Misty 🌫️";
+      }
+      else if (district === "kannur") {
+        result.innerText = "Kannur: Windy 🌬️";
+      }
+      else if (district === "kasaragod") {
+        result.innerText = "Kasaragod: Hot ☀️";
+      }
+    }
+  </script>
+
+</body>
+</html>

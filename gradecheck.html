@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Checker | Zaitoon International</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+  rel="icon"
+  href="https://www.zaitooncampus.com/favicon.ico"
+  type="image/x-icon"
+>
+
+</head>
+
+<body class="min-h-screen relative">
+
+ <div
+class="absolute inset-0 bg-cover bg-center"
+style="background-image: url('https://www.zaitooncampus.com/_next/image?url=%2Fcampus-images%2Fkannur.jpg&w=3840&q=100');">
+</div>
+
+
+  <div class="absolute inset-0 opacity-40 bg-black"></div>
+
+
+  <div class="relative min-h-screen flex items-center justify-center">
+
+ <div class="bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-xl w-96 text-center">
+
+ <h1 class="text-xl font-bold text-emerald-700">
+   Zaitoon International Girls Campus
+   </h1>
+ <p class="text-sm text-gray-600 mb-6">Kannur</p>
+
+ <h2 class="text-2xl font-semibold mb-4">🎓 Grade Checker</h2>
+
+<input
+type="number"
+ id="marks"
+  placeholder="Enter marks (0 - 100)"
+ class="w-full p-3 border rounded-lg mb-4
+ focus:outline-none focus:ring-2 focus:ring-emerald-400" >
+
+<button
+ onclick="checkGrade()"
+ class="w-full bg-emerald-500 text-white py-3 rounded-lg
+ hover:bg-emerald-600 transition font-semibold" >
+ Check Grade
+</button>
+
+<p id="result" class="mt-5 text-lg font-bold"></p>
+
+ </div>
+
+ </div>
+
+
+ <script>
+ function checkGrade() {
+ let marks = document.getElementById("marks").value;
+ let result = document.getElementById("result");
+
+ if (marks === "") {
+  result.innerText = "Please enter marks ❗";
+  }
+      else if (marks > 100 || marks < 0) {
+        result.innerText = "Enter valid marks (0 - 100)";
+      }
+      else if (marks == 100) {
+        result.innerText = "🥇 PERFECT SCORE! 🏆🎉";
+      }
+      else if (marks == 99) {
+        result.innerText = "🥈 Outstanding! 🏆🎉";
+      }
+      else if (marks == 98) {
+        result.innerText = "🥉 Excellent! 🏆🎉";
+      }
+      else if (marks >= 90) {
+        result.innerText = "Grade A+ 🌟 Excellent 🎉";
+      }
+      else if (marks >= 75) {
+        result.innerText = "Grade A 👍 Very Good ✨";
+      }
+      else if (marks >= 60) {
+        result.innerText = "Grade B 🙂 Good";
+      }
+      else if (marks >= 50) {
+        result.innerText = "Grade C ⚠️ Average";
+      }
+ else {
+ result.innerText = "Fail❗️ keep trying 💪🏻";
+ }
+    }
+  </script>
+
+</body>
+</html>
